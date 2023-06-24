@@ -1,0 +1,52 @@
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\bin\Debug\pnnpk.exe.config
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\bin\Debug\pnnpk.exe
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\bin\Debug\pnnpk.pdb
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.csproj.AssemblyReference.cache
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.csproj.SuggestedBindingRedirects.cache
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.Properties.Resources.resources
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.csproj.GenerateResource.cache
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.csproj.CoreCompileInputs.cache
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.exe
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.pdb
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.MainForm.resources
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.AuthorizationForm.resources
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.RequestListForm.resources
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.RequestForm.resources
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.FinishRequestForm.resources
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.PurchaseForm.resources
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.AddItemForm.resources
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.BrowseItemForm.resources
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.CreateItemForm.resources
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.ItemForm.resources
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.CreateRequestForm.resources
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.ChangeEmpForm.resources
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.EmployeeListForm.resources
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.EquipmentListForm.resources
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.ChangeDepForm.resources
+D:\!6 семестр\!c#\Практика 3 курс\pnnpk\obj\Debug\pnnpk.DepartmentListForm.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\bin\Debug\pnnpk.exe.config
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\bin\Debug\pnnpk.exe
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\bin\Debug\pnnpk.pdb
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.csproj.AssemblyReference.cache
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.csproj.SuggestedBindingRedirects.cache
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.AddItemForm.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.AuthorizationForm.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.BrowseItemForm.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.ChangeDepForm.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.ChangeEmpForm.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.CreateItemForm.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.CreateRequestForm.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.DepartmentListForm.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.EmployeeListForm.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.EquipmentListForm.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.FinishRequestForm.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.ItemForm.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.MainForm.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.Properties.Resources.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.PurchaseForm.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.RequestForm.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.RequestListForm.resources
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.csproj.GenerateResource.cache
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.csproj.CoreCompileInputs.cache
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.exe
+C:\Users\Sasha\Downloads\Praktika_3_kurs\Практика 3 курс\pnnpk\obj\Debug\pnnpk.pdb
