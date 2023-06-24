@@ -54,7 +54,7 @@
             this.login_textbox.Name = "login_textbox";
             this.login_textbox.Size = new System.Drawing.Size(228, 29);
             this.login_textbox.TabIndex = 1;
-            this.login_textbox.Text = "buy";
+            this.login_textbox.Text = "ЗубенкоМП";
             // 
             // label2
             // 
@@ -83,6 +83,8 @@
             this.password_textbox.Name = "password_textbox";
             this.password_textbox.Size = new System.Drawing.Size(228, 29);
             this.password_textbox.TabIndex = 3;
+            this.password_textbox.Text = "2281337";
+            this.password_textbox.UseSystemPasswordChar = true;
             // 
             // button1
             // 

@@ -12,11 +12,11 @@ namespace pnnpk
 {
     public partial class AddItemForm : Form
     {
-
         public int itemID = 0;
         private double sum;
+        private double oldSum = 0;
         private double price;
-        private int count;
+        private int count; 
 
         PurchaseForm main;
         public AddItemForm()
@@ -31,6 +31,32 @@ namespace pnnpk
             type_box.SelectedIndex = 0;
         }
 
+        public AddItemForm(int id, string t, string d, int c, double pr, double os)
+        {
+            InitializeComponent();
+            type_box.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+
+            type_box.Items.Add("Системный блок");
+            type_box.Items.Add("Монитор");
+            type_box.Items.Add("Принтер");
+
+            type_box.SelectedIndex = 0;
+            
+            itemID = id;
+            type_box.Text = t;
+            description_box.Text = d;
+            count = c;
+            price = pr;
+            oldSum = os;
+
+            count_box.Text = count.ToString();
+            price_box.Text = pr.ToString();
+            RecalculateSum(null, null);
+
+            label1.Text = "Изменение товара:";
+            add_button.Text = "Изменить";
+    }
+
         private void cancel_button_Click(object sender, EventArgs e)
         {
             Close();
@@ -44,10 +70,13 @@ namespace pnnpk
                 main = this.Owner as PurchaseForm;
                 if (main != null)
                 {
-                    main.sum += sum;
+                    main.sum += sum - oldSum;
                     main.count = count;
                     main.price = price;
                     main.itemID = itemID;
+                    main.type = type_box.Text;
+                    main.description = description_box.Text;
+                    main.canceled = false;
                 }
                 Close();
             }
@@ -83,6 +112,12 @@ namespace pnnpk
             {
                 e.Handled = true;
             }
+        }
+
+        private void type_box_TextChanged(object sender, EventArgs e)
+        {
+            itemID = 0;
+            description_box.Text = "";
         }
     }
 }

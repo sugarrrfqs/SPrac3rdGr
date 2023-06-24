@@ -59,6 +59,7 @@
             this.request_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.request_list.Size = new System.Drawing.Size(560, 419);
             this.request_list.TabIndex = 45;
+            this.request_list.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.request_list_CellDoubleClick);
             // 
             // label4
             // 

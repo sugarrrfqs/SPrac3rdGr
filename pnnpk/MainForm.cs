@@ -15,6 +15,9 @@ namespace pnnpk
     public partial class MainForm : Form
     { 
         public static SqlConnection connection = null;
+        public static int userID = 0;
+        public static string userType = "";
+
         private SqlCommandBuilder builder = null;
         private SqlDataAdapter dataAdapter = new SqlDataAdapter();
         private DataTable dataTable = new DataTable();
@@ -56,10 +59,25 @@ namespace pnnpk
         {
             InitializeComponent();
             //авторизация -> вывод соответсвующего groupbox
-            if (extern_variables.login == "exp") storekeeper_groupbox.Visible = true;
-            if (extern_variables.login == "eng") engineer_groupbox.Visible = true;
-            if (extern_variables.login == "buy") purchaser_groupbox.Visible = true;
-
+            switch (userType)
+            {
+                case "Закупщик":
+                    purchaser_groupbox.Visible = true;               
+                    break;
+                case "Кладовщик":
+                    storekeeper_groupbox.Visible = true;
+                    storekeeper_groupbox.Location = new Point(engineer_groupbox.Location.X, 398);
+                    break;
+                case "Инженер":
+                    engineer_groupbox.Visible = true;
+                    engineer_groupbox.Location = new Point(engineer_groupbox.Location.X, 398);
+                    break;
+                case "Админ":
+                    purchaser_groupbox.Visible = true;
+                    storekeeper_groupbox.Visible = true;
+                    engineer_groupbox.Visible = true;   
+                    break;
+            }
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -93,7 +111,7 @@ namespace pnnpk
                 dataAdapter = new SqlDataAdapter(query, connection);
                 builder = new SqlCommandBuilder(dataAdapter);
                 dataTable.Clear();
-                dataTable.Columns.Clear();
+                //dataTable.Columns.Clear();               
                 dataAdapter.Fill(dataTable);
                 equipment_list.DataSource = dataTable;
             }
@@ -285,12 +303,19 @@ namespace pnnpk
         {
             PurchaseForm purchaseForm = new PurchaseForm();
             purchaseForm.Show();
+
+            purchaseForm.FormClosed += PurchaseForm_FormClosed;
+        }
+
+        private void PurchaseForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            LoadDataInDataGridView(equipmentQuery);
         }
 
         private void open_item_button_Click(object sender, EventArgs e)
         {
             //просмотр истории оборудования по ID
-
+            
             ItemForm itemForm = new ItemForm
                 (equipment_list[0, equipment_list.CurrentRow.Index].Value.ToString(),
                 equipment_list[8, equipment_list.CurrentRow.Index].Value.ToString(),
@@ -320,7 +345,7 @@ namespace pnnpk
             changeDepForm.Show();
         }
 
-        private void equipment_list_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void equipment_list_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             open_item_button_Click(sender, e);
         }

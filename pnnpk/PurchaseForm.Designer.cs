@@ -64,6 +64,7 @@
             this.purchase_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.purchase_list.Size = new System.Drawing.Size(854, 352);
             this.purchase_list.TabIndex = 4;
+            this.purchase_list.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.purchase_list_CellDoubleClick);
             // 
             // button1
             // 

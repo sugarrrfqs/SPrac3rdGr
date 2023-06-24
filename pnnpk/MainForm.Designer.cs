@@ -98,7 +98,7 @@
             this.equipment_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.equipment_list.Size = new System.Drawing.Size(1260, 658);
             this.equipment_list.TabIndex = 0;
-            this.equipment_list.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.equipment_list_CellDoubleClick);
+            this.equipment_list.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.equipment_list_CellContentDoubleClick);
             // 
             // search_box1
             // 
@@ -484,7 +484,7 @@
             this.storekeeper_groupbox.Controls.Add(this.change_emp_button);
             this.storekeeper_groupbox.Controls.Add(this.request_button);
             this.storekeeper_groupbox.Controls.Add(this.move_button);
-            this.storekeeper_groupbox.Location = new System.Drawing.Point(12, 398);
+            this.storekeeper_groupbox.Location = new System.Drawing.Point(12, 456);
             this.storekeeper_groupbox.Name = "storekeeper_groupbox";
             this.storekeeper_groupbox.Size = new System.Drawing.Size(320, 110);
             this.storekeeper_groupbox.TabIndex = 45;
@@ -526,7 +526,7 @@
             // 
             this.engineer_groupbox.Controls.Add(this.write_off_button);
             this.engineer_groupbox.Controls.Add(this.request_list_button);
-            this.engineer_groupbox.Location = new System.Drawing.Point(12, 398);
+            this.engineer_groupbox.Location = new System.Drawing.Point(12, 572);
             this.engineer_groupbox.Name = "engineer_groupbox";
             this.engineer_groupbox.Size = new System.Drawing.Size(320, 81);
             this.engineer_groupbox.TabIndex = 46;

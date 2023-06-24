@@ -166,5 +166,10 @@ namespace pnnpk
 
             LoadDataInDataGridView(descriptionQuery);
         }
+
+        private void item_list_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            choose_button_Click(null, null);
+        }
     }
 }

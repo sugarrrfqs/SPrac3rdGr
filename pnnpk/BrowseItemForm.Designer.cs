@@ -123,6 +123,7 @@
             this.item_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.item_list.Size = new System.Drawing.Size(553, 418);
             this.item_list.TabIndex = 43;
+            this.item_list.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.item_list_CellContentDoubleClick);
             // 
             // add_button
             // 

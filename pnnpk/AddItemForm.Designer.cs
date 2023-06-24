@@ -185,6 +185,7 @@
             this.type_box.Name = "type_box";
             this.type_box.Size = new System.Drawing.Size(146, 28);
             this.type_box.TabIndex = 25;
+            this.type_box.TextChanged += new System.EventHandler(this.type_box_TextChanged);
             // 
             // AddItemForm
             // 
