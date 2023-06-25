@@ -95,8 +95,12 @@ namespace pnnpk
             if (double.TryParse(price_box.Text, out price) && int.TryParse(count_box.Text, out count))
             {
                 sum = price * count;
-                sum_label.Text = sum.ToString();
             }
+            else
+            {
+                sum = 0;
+            }
+            sum_label.Text = sum.ToString();
         }
         private void count_box_KeyPress(object sender, KeyPressEventArgs e)
         {

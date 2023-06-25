@@ -181,7 +181,7 @@ namespace pnnpk
                         tempTable.Columns.Clear();
                         dataAdapter.Fill(tempTable);
 
-                        query = $"INSERT INTO [Закупка] VALUES('{sum}', '{tempTable.Rows[0][0]}')";
+                        query = $"INSERT INTO [Закупка] VALUES('{Convert.ToInt32(row[5])}', '{tempTable.Rows[0][0]}')";
                         dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
                         dataAdapter.InsertCommand.ExecuteNonQuery();
                     }

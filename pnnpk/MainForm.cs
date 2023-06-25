@@ -297,6 +297,11 @@ namespace pnnpk
         private void write_off_button_Click(object sender, EventArgs e)
         {
             //списать выделенное оборудование
+            string query = $"UPDATE [Оборудование] SET [Статус] = 'Списан' " +
+                $"WHERE [ID] = {Convert.ToInt32 (equipment_list[0, equipment_list.CurrentRow.Index].Value)}";
+            dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
+            dataAdapter.InsertCommand.ExecuteNonQuery();
+            LoadDataInDataGridView(equipmentQuery);
         }
 
         private void buy_button_Click(object sender, EventArgs e)
@@ -327,7 +332,7 @@ namespace pnnpk
         private void request_button_Click(object sender, EventArgs e)
         {
             //создание заявки на ремонт
-            CreateRequestForm createRequestForm = new CreateRequestForm();
+            CreateRequestForm createRequestForm = new CreateRequestForm(Convert.ToInt32(equipment_list[0, equipment_list.CurrentRow.Index].Value));
             createRequestForm.Show();
         }
 
@@ -341,7 +346,9 @@ namespace pnnpk
         private void move_button_Click(object sender, EventArgs e)
         {
             //перемещение оборудования
-            ChangeDepForm changeDepForm = new ChangeDepForm();
+            ChangeDepForm changeDepForm = new ChangeDepForm(Convert.ToInt32(equipment_list[5, equipment_list.CurrentRow.Index].Value),
+                equipment_list[6, equipment_list.CurrentRow.Index].Value.ToString(),
+                equipment_list[7, equipment_list.CurrentRow.Index].Value.ToString());
             changeDepForm.Show();
         }
 

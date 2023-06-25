@@ -44,16 +44,23 @@
             // 
             // request_list
             // 
+            this.request_list.AllowUserToAddRows = false;
+            this.request_list.AllowUserToDeleteRows = false;
+            this.request_list.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.request_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.request_list.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.request_list.Location = new System.Drawing.Point(12, 133);
+            this.request_list.MultiSelect = false;
             this.request_list.Name = "request_list";
-            this.request_list.Size = new System.Drawing.Size(560, 416);
+            this.request_list.ReadOnly = true;
+            this.request_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.request_list.Size = new System.Drawing.Size(1120, 416);
             this.request_list.TabIndex = 1;
             this.request_list.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.request_list_CellDoubleClick);
             // 
             // open_request
             // 
-            this.open_request.Location = new System.Drawing.Point(403, 106);
+            this.open_request.Location = new System.Drawing.Point(963, 102);
             this.open_request.Name = "open_request";
             this.open_request.Size = new System.Drawing.Size(169, 23);
             this.open_request.TabIndex = 24;
@@ -100,9 +107,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(16, 89);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(142, 13);
+            this.label4.Size = new System.Drawing.Size(151, 13);
             this.label4.TabIndex = 41;
-            this.label4.Text = "Поиск по номеру заявки...";
+            this.label4.Text = "Поиск по ID оборудования...";
             // 
             // search_req_button
             // 
@@ -148,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 561);
+            this.ClientSize = new System.Drawing.Size(1144, 561);
             this.Controls.Add(this.search_req_clear);
             this.Controls.Add(this.search_req_button);
             this.Controls.Add(this.search_req_id_box);

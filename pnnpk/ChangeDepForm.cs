@@ -12,9 +12,19 @@ namespace pnnpk
 {
     public partial class ChangeDepForm : Form
     {
-        public ChangeDepForm()
+        private int depID;
+        private string depName;
+        private string cab;
+        public ChangeDepForm(int d, string ds, string c)
         {
             InitializeComponent();
+            depID = d;
+            dep_id_label.Text = d.ToString();
+            depName = ds;
+
+            cab = c;
+            cab_num_label.Text = c;
+            dep_name_label.Text = ds;
         }
 
         private void cancel_button_Click(object sender, EventArgs e)

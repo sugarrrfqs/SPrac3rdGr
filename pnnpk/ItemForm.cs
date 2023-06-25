@@ -66,7 +66,7 @@ namespace pnnpk
         private void request_button_Click(object sender, EventArgs e)
         {
             //создание завки на ремонт
-            CreateRequestForm createRequestForm = new CreateRequestForm();
+            CreateRequestForm createRequestForm = new CreateRequestForm(ID);
             createRequestForm.Show();
         }
 
@@ -80,8 +80,16 @@ namespace pnnpk
         private void move_button_Click(object sender, EventArgs e)
         {
             //перемещение оборудования
-            ChangeDepForm changeDepForm = new ChangeDepForm();
-            changeDepForm.Show();
+            string query = $"Select * from [Оборудование] where [ID] = {ID}";
+            dataAdapter = new SqlDataAdapter(query, MainForm.connection);
+            builder = new SqlCommandBuilder(dataAdapter);
+            DataTable tempTable = new DataTable();
+            tempTable.Clear();
+            tempTable.Columns.Clear();
+            dataAdapter.Fill(tempTable);
+
+           // ChangeDepForm changeDepForm = new ChangeDepForm(Convert.ToInt32(tempTable.Rows[0][4]), tempTable.Rows[0][5].ToString());
+            //changeDepForm.Show();
         }
 
         private void request_list_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
