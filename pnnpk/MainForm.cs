@@ -86,7 +86,7 @@ namespace pnnpk
                 // Строки подключения (поменять в двух формах) -
                 // 1. Саша Р.   "Data Source=.\\SQLEXPRESS01;Initial Catalog=equipment accounting;Persist Security Info=True;User ID=EquipmentAccountingUser;Password=123"
                 // 2. Саша Ц.   @"Data Source=LAPTOP-UCG1G1UG\SQLEXPRESS;Initial Catalog=equipment accounting;Integrated Security=True"
-                connection = new SqlConnection("Data Source=.\\SQLEXPRESS01;Initial Catalog=equipment accounting;Persist Security Info=True;User ID=EquipmentAccountingUser;Password=123");
+                connection = new SqlConnection(@"Data Source=LAPTOP-UCG1G1UG\SQLEXPRESS;Initial Catalog=equipment accounting;Integrated Security=True");
                 connection.Open();
             }
             catch (Exception ex)
@@ -351,7 +351,8 @@ namespace pnnpk
             //перемещение оборудования
             ChangeDepForm changeDepForm = new ChangeDepForm(Convert.ToInt32(equipment_list[5, equipment_list.CurrentRow.Index].Value),
                 equipment_list[6, equipment_list.CurrentRow.Index].Value.ToString(),
-                equipment_list[7, equipment_list.CurrentRow.Index].Value.ToString());
+                equipment_list[7, equipment_list.CurrentRow.Index].Value.ToString(),
+                Convert.ToInt32(equipment_list[0, equipment_list.CurrentRow.Index].Value));
             changeDepForm.Show();
         }
 

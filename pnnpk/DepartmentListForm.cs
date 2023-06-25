@@ -19,12 +19,12 @@ namespace pnnpk
 
         ChangeDepForm main;
 
-        string descriptionQuery = $"SELECT * FROM [Отделы]";
+        string query = $"SELECT * FROM [Отделы]";
         public DepartmentListForm()
         {
             InitializeComponent();
 
-            LoadDataInDataGridView(descriptionQuery);
+            LoadDataInDataGridView(query);
         }
         private void LoadDataInDataGridView(string query)
         {
