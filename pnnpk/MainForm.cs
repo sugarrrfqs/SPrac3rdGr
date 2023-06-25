@@ -83,7 +83,7 @@ namespace pnnpk
         {
             try
             {
-                connection = new SqlConnection("Data Source=.\\SQLEXPRESS01;Initial Catalog=equipment accounting;Persist Security Info=True;User ID=EquipmentAccountingUser;Password=123");
+                connection = new SqlConnection(@"Data Source=LAPTOP-UCG1G1UG\SQLEXPRESS;Initial Catalog=equipment accounting;Integrated Security=True");
                 connection.Open();
             }
             catch (Exception ex)

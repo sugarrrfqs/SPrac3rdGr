@@ -43,6 +43,7 @@ namespace pnnpk
         {
             //выбор отдела из имеющихся
             DepartmentListForm departmentListForm = new DepartmentListForm();
+            departmentListForm.Owner = this;
             departmentListForm.Show();
         }
     }
