@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using pnnpk.configuration;
 
 namespace pnnpk
 {
@@ -180,14 +181,7 @@ namespace pnnpk
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                var fileContent = string.Empty;
-                string filePath = openFileDialog.FileName;
-                var fileStream = openFileDialog.OpenFile();
-
-                using (StreamReader reader = new StreamReader(fileStream))
-                {
-                    fileContent = reader.ReadToEnd();
-                }
+                Import.ImportFile(openFileDialog.FileName);                
             }
         }
     }
