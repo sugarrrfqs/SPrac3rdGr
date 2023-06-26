@@ -27,7 +27,7 @@ namespace pnnpk
         public ItemForm(string curItemID, string curItemGroupID, string curItemType, string curItemDescription)
         {
             InitializeComponent();
-            if (MainForm.userType == "Кладовщик" || MainForm.userType == "Админ") storekeeper_groupbox.Visible = true;
+            //if (MainForm.userType == "Кладовщик" || MainForm.userType == "Админ") storekeeper_groupbox.Visible = true;
 
             ID = int.Parse(curItemID);
             if (!int.TryParse(curItemGroupID, out groupID)) groupID = -1;

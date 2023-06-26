@@ -23,7 +23,9 @@ namespace pnnpk
             InitializeComponent();
 
             reqID = rID;
-            itemID = iID;       
+            itemID = iID;
+
+            req_id_label.Text = rID.ToString();
         }
 
         private void finish_button_Click(object sender, EventArgs e)
