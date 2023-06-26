@@ -43,11 +43,17 @@ namespace pnnpk
         private void change_button_Click(object sender, EventArgs e)
         {
             //провести перемещение оборудования 
-
             string query = $"UPDATE [Оборудование] SET [IDОтдела] = '{Convert.ToInt32(dep_new_id.Text)}', [Кабинет] = '{cap_new_num_box.Text}' " +
                 $"WHERE [ID] = {ID}";
             dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
             dataAdapter.InsertCommand.ExecuteNonQuery();
+
+            string date = DateTime.UtcNow.ToString("yyyy-MM-dd");
+            query = $"INSERT INTO [ИсторияСобытий] VALUES('Перемещение', '{date}',{ID},{MainForm.userID})";
+
+            dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
+            dataAdapter.InsertCommand.ExecuteNonQuery();
+
             this.Hide();
         }
 

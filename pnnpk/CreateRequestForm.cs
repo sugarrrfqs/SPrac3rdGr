@@ -40,6 +40,10 @@ namespace pnnpk
             dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
             dataAdapter.InsertCommand.ExecuteNonQuery();
 
+            query = $"UPDATE [Оборудование] SET [Статус] = 'В заявке' " +
+                $"WHERE [ID] = {itemID}";
+            dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
+            dataAdapter.InsertCommand.ExecuteNonQuery();
             Close();
         }
     }
