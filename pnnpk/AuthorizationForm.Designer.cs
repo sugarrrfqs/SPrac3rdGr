@@ -122,6 +122,7 @@
             this.Controls.Add(this.login_textbox);
             this.Controls.Add(this.label1);
             this.Name = "AuthorizationForm";
+            this.Load += new System.EventHandler(this.AuthorizationForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

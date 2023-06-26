@@ -29,11 +29,14 @@ namespace pnnpk
             {
                 // Строки подключения (поменять в двух формах) -
                 // 1. Саша Р.
-                connection = new SqlConnection("Data Source=.\\SQLEXPRESS01;Initial Catalog=equipment accounting;Persist Security Info=True;User ID=EquipmentAccountingUser;Password=123");
+                //connection = new SqlConnection("Data Source=.\\SQLEXPRESS01;Initial Catalog=equipment accounting;Persist Security Info=True;User ID=EquipmentAccountingUser;Password=123");
 
                 // 2. Саша Ц.
                 // connection = new SqlConnection(@"Data Source=LAPTOP-UCG1G1UG\SQLEXPRESS;Initial Catalog=equipment accounting;Integrated Security=True");
-                
+
+                // 3. Egor
+                connection = new SqlConnection("Data Source=localhost;Initial Catalog=equipment accounting;Persist Security Info=True;User ID=egor");
+
 
                 connection.Open();
             }
@@ -69,6 +72,11 @@ namespace pnnpk
                 mainForm.Show();
             }
             else error_label.Visible = true;
+        }
+
+        private void AuthorizationForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
