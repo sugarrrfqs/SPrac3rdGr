@@ -19,6 +19,8 @@ namespace pnnpk
         private SqlDataAdapter dataAdapter = new SqlDataAdapter();
         private DataTable dataTable = new DataTable();
 
+        private SqlCommandBuilder builder = null;
+
         private int ID;
         public ChangeDepForm(int d, string ds, string c, int id)
         {
@@ -43,6 +45,8 @@ namespace pnnpk
         private void change_button_Click(object sender, EventArgs e)
         {
             //провести перемещение оборудования 
+            DataTable tempTable = new DataTable();
+
             string query = $"UPDATE [Оборудование] SET [IDОтдела] = '{Convert.ToInt32(dep_new_id.Text)}', [Кабинет] = '{cap_new_num_box.Text}' " +
                 $"WHERE [ID] = {ID}";
             dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
@@ -53,6 +57,31 @@ namespace pnnpk
 
             dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
             dataAdapter.InsertCommand.ExecuteNonQuery();
+
+            query = $"INSERT INTO [ИсторияСобытий] VALUES('Перемещение', '{date}',{ID},{MainForm.userID})";
+
+            query = "SELECT * FROM [ИсторияСобытий] ORDER BY [ID] DESC offset 0 rows fetch first 1 row only";
+            dataAdapter = new SqlDataAdapter(query, MainForm.connection);
+            builder = new SqlCommandBuilder(dataAdapter);
+            tempTable.Clear();
+            tempTable.Columns.Clear();
+            dataAdapter.Fill(tempTable);
+
+            query = $"INSERT INTO [Перемещение] VALUES({depID},'{cab}',{Convert.ToInt32(dep_new_id.Text)},'{cap_new_num_box.Text}', '{tempTable.Rows[0][0]}')";
+            dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
+            dataAdapter.InsertCommand.ExecuteNonQuery();
+
+            query = $"SELECT * FROM [Оборудование] WHERE [ID] = {ID}";
+            dataAdapter = new SqlDataAdapter(query, MainForm.connection);
+            builder = new SqlCommandBuilder(dataAdapter);
+            tempTable.Clear();
+            tempTable.Columns.Clear();
+            dataAdapter.Fill(tempTable);
+
+            /*if (tempTable.Rows[0][1] == "Системный блок")
+            {
+
+            }*/
 
             this.Hide();
         }

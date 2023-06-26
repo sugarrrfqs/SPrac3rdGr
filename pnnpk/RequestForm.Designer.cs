@@ -87,6 +87,7 @@
             this.description_box.Location = new System.Drawing.Point(221, 100);
             this.description_box.Multiline = true;
             this.description_box.Name = "description_box";
+            this.description_box.ReadOnly = true;
             this.description_box.Size = new System.Drawing.Size(451, 53);
             this.description_box.TabIndex = 4;
             // 
@@ -135,6 +136,7 @@
             this.problem_box.Location = new System.Drawing.Point(221, 159);
             this.problem_box.Multiline = true;
             this.problem_box.Name = "problem_box";
+            this.problem_box.ReadOnly = true;
             this.problem_box.Size = new System.Drawing.Size(451, 164);
             this.problem_box.TabIndex = 9;
             // 
@@ -146,6 +148,7 @@
             this.accept_req_button.TabIndex = 10;
             this.accept_req_button.Text = "Принять заявку";
             this.accept_req_button.UseVisualStyleBackColor = true;
+            this.accept_req_button.Visible = false;
             this.accept_req_button.Click += new System.EventHandler(this.accept_req_button_Click);
             // 
             // finish_req_button
@@ -156,6 +159,7 @@
             this.finish_req_button.TabIndex = 11;
             this.finish_req_button.Text = "Завершить";
             this.finish_req_button.UseVisualStyleBackColor = true;
+            this.finish_req_button.Visible = false;
             this.finish_req_button.Click += new System.EventHandler(this.finish_req_button_Click);
             // 
             // RequestForm

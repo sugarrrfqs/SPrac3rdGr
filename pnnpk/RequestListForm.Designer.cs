@@ -46,7 +46,7 @@
             // 
             this.request_list.AllowUserToAddRows = false;
             this.request_list.AllowUserToDeleteRows = false;
-            this.request_list.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.request_list.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.request_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.request_list.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.request_list.Location = new System.Drawing.Point(12, 133);
@@ -87,7 +87,7 @@
             // 
             // search_req_clear
             // 
-            this.search_req_clear.Location = new System.Drawing.Point(138, 105);
+            this.search_req_clear.Location = new System.Drawing.Point(345, 107);
             this.search_req_clear.Name = "search_req_clear";
             this.search_req_clear.Size = new System.Drawing.Size(20, 20);
             this.search_req_clear.TabIndex = 43;
@@ -99,8 +99,9 @@
             // 
             this.search_req_id_box.Location = new System.Drawing.Point(16, 105);
             this.search_req_id_box.Name = "search_req_id_box";
-            this.search_req_id_box.Size = new System.Drawing.Size(90, 20);
+            this.search_req_id_box.Size = new System.Drawing.Size(145, 20);
             this.search_req_id_box.TabIndex = 40;
+            this.search_req_id_box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.search_req_id_box_KeyPress);
             // 
             // label4
             // 
@@ -113,7 +114,7 @@
             // 
             // search_req_button
             // 
-            this.search_req_button.Location = new System.Drawing.Point(112, 105);
+            this.search_req_button.Location = new System.Drawing.Point(319, 107);
             this.search_req_button.Name = "search_req_button";
             this.search_req_button.Size = new System.Drawing.Size(20, 20);
             this.search_req_button.TabIndex = 42;

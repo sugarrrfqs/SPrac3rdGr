@@ -28,9 +28,13 @@ namespace pnnpk
             try
             {
                 // Строки подключения (поменять в двух формах) -
-                // 1. Саша Р.   "Data Source=.\\SQLEXPRESS01;Initial Catalog=equipment accounting;Persist Security Info=True;User ID=EquipmentAccountingUser;Password=123"
-                // 2. Саша Ц.   @"Data Source=LAPTOP-UCG1G1UG\SQLEXPRESS;Initial Catalog=equipment accounting;Integrated Security=True"
-                connection = new SqlConnection(@"Data Source=LAPTOP-UCG1G1UG\SQLEXPRESS;Initial Catalog=equipment accounting;Integrated Security=True");
+                // 1. Саша Р.
+                connection = new SqlConnection("Data Source=.\\SQLEXPRESS01;Initial Catalog=equipment accounting;Persist Security Info=True;User ID=EquipmentAccountingUser;Password=123");
+
+                // 2. Саша Ц.
+                // connection = new SqlConnection(@"Data Source=LAPTOP-UCG1G1UG\SQLEXPRESS;Initial Catalog=equipment accounting;Integrated Security=True");
+                
+
                 connection.Open();
             }
             catch (Exception ex)

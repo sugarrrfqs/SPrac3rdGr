@@ -220,6 +220,7 @@
             this.search_emp_id_box.Name = "search_emp_id_box";
             this.search_emp_id_box.Size = new System.Drawing.Size(63, 20);
             this.search_emp_id_box.TabIndex = 24;
+            this.search_emp_id_box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.id_box_KeyPress);
             // 
             // label3
             // 
@@ -294,6 +295,7 @@
             this.search_dep_id_box.Name = "search_dep_id_box";
             this.search_dep_id_box.Size = new System.Drawing.Size(63, 20);
             this.search_dep_id_box.TabIndex = 28;
+            this.search_dep_id_box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.id_box_KeyPress);
             // 
             // search_clear7
             // 
@@ -366,6 +368,7 @@
             this.search_group_id_box.Name = "search_group_id_box";
             this.search_group_id_box.Size = new System.Drawing.Size(63, 20);
             this.search_group_id_box.TabIndex = 36;
+            this.search_group_id_box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.id_box_KeyPress);
             // 
             // search_clear8
             // 
@@ -402,6 +405,7 @@
             this.search_item_id_box.Name = "search_item_id_box";
             this.search_item_id_box.Size = new System.Drawing.Size(63, 20);
             this.search_item_id_box.TabIndex = 40;
+            this.search_item_id_box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.id_box_KeyPress);
             // 
             // search_groupbox
             // 

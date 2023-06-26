@@ -16,44 +16,42 @@ namespace pnnpk
         private SqlCommandBuilder builder = null;
         private SqlDataAdapter dataAdapter = new SqlDataAdapter();
         private DataTable dataTable = new DataTable();
-        private string applicationsQuery = 
+        private string applicationsQuery =
             "Select " +
-                    "[ИсторияСобытий].[ID]," +
-                    "[ТипСобытия]," +
-                    "[Дата]," +
-                    "[ДатаПринятияЗаявки]," +
-                    "[ДатаОкончанияРемонта]," +
-                    "[ИсторияСобытий].[IDОборудования]," +
-                    "[ИсторияСобытий].[IDЮзера]," +
-                    "[ЮзерыСистемы].[Логин]," +
-                    "[НеисправностьВЗаявке]," +
-                    "[ОтчетОРемонте]," +
-
-                    "CONCAT_WS(' --- ', " +
+            "[Ремонт].[ID]," +
+            "[СтатусЗаявки]," +
+            "[ДатаСозданияЗаявки]," +
+            "[ДатаПринятияЗаявки]," +
+            "[ДатаОкончанияРемонта]," +
+            "[Оборудование].[Тип] AS [ТипОборудования]," +
+            "[НеисправностьВЗаявке]," +
+            "[ОтчетОРемонте]," +
+            "[ЮзерыСистемы].[Логин] AS [ЗаявкаОт]," +
+            "[ИсторияСобытий].[IDОборудования]," +
+            "CONCAT_WS(' --- ', " +
                     "[Процессор], [Видеокарта], [ОперативнаяПамять], [ЖесткийДиск], " +
                     "[СправочникПринтеры].[Марка], [СправочникПринтеры].[Модель], [ФорматПечати], " +
                     "[СправочникМониторы].[Марка], [СправочникМониторы].[Модель], [Диагональ]) AS [Характеристика] " +
+            
+
+                    "from [Ремонт]" +
 
 
-             "from [ИсторияСобытий]  " +
+            "left join [ИсторияСобытий] on [ИсторияСобытий].[ID] = [Ремонт].[IDСобытия] " +
 
+            "LEFT JOIN [СистемныеБлоки] ON [ИсторияСобытий].[IDОборудования] = [СистемныеБлоки].[IDОборудования] " +
+            "LEFT JOIN [СправочникСистемныеБлоки] ON [СистемныеБлоки].[IDЗаписиСправочника] = [СправочникСистемныеБлоки].[ID] " +
 
-                    "Left join [ЗаявкаНаРемонт] on [ЗаявкаНаРемонт].[IDСобытия] = [ИсторияСобытий].[ID]" +
-                    "Left join [Ремонт] on [Ремонт].[IDСобытия] = [ИсторияСобытий].[ID]" +
+            "LEFT JOIN [Принтеры] ON [ИсторияСобытий].[IDОборудования]  = [Принтеры].[IDОборудования] " +
+            "LEFT JOIN [СправочникПринтеры] ON [Принтеры].[IDЗаписиСправочника] = [СправочникПринтеры].[ID] " +
 
-                    "LEFT JOIN [СистемныеБлоки] ON [ИсторияСобытий].[IDОборудования] = [СистемныеБлоки].[IDОборудования] " +
-                    "LEFT JOIN [СправочникСистемныеБлоки] ON [СистемныеБлоки].[IDЗаписиСправочника] = [СправочникСистемныеБлоки].[ID] " +
+            "LEFT JOIN [Мониторы] ON [ИсторияСобытий].[IDОборудования]  = [Мониторы].[IDОборудования] " +
+            "LEFT JOIN [СправочникМониторы] ON [Мониторы].[IDЗаписиСправочника] = [СправочникМониторы].[ID] " +
 
-                    "LEFT JOIN [Принтеры] ON [ИсторияСобытий].[IDОборудования]  = [Принтеры].[IDОборудования] " +
-                    "LEFT JOIN [СправочникПринтеры] ON [Принтеры].[IDЗаписиСправочника] = [СправочникПринтеры].[ID] " +
+            "LEFT JOIN [ЮзерыСистемы] ON [ИсторияСобытий].[IDЮзера] = [ЮзерыСистемы].[ID]" +
 
-                    "LEFT JOIN [Мониторы] ON [ИсторияСобытий].[IDОборудования]  = [Мониторы].[IDОборудования] " +
-                    "LEFT JOIN [СправочникМониторы] ON [Мониторы].[IDЗаписиСправочника] = [СправочникМониторы].[ID] " +
+            "left join [Оборудование] on [Оборудование].[ID] = [ИсторияСобытий].[IDОборудования]";
 
-                    "LEFT JOIN [ЮзерыСистемы] ON [ИсторияСобытий].[IDЮзера] = [ЮзерыСистемы].[ID]" +
-
-
-            "where ([ТипСобытия] = 'ЗаявкаНаРемонт' or [ТипСобытия] = 'Ремонт')";
         public RequestListForm()
         {
             InitializeComponent();
@@ -66,6 +64,10 @@ namespace pnnpk
             login_label.Text = dataTable.Rows[0][1].ToString();
             dataTable.Columns.Clear();
             // --сделать привязку ФИО по логину-- (Фио не привязано к логину)
+
+            status_box.Items.Add("Ждет принятия");
+            status_box.Items.Add("В работе");
+            status_box.Items.Add("Закрыта");
 
             LoadDataInDataGridView(applicationsQuery);
         }
@@ -88,19 +90,35 @@ namespace pnnpk
         private void open_request_Click(object sender, EventArgs e)
         {
             //открытие выделенной в таблице заявки
-            RequestForm requestForm = new RequestForm();
+            RequestForm requestForm = new RequestForm(Convert.ToInt32(dataTable.Rows[request_list.CurrentRow.Index]["ID"]),
+                Convert.ToInt32(dataTable.Rows[request_list.CurrentRow.Index]["IDОборудования"]),
+                dataTable.Rows[request_list.CurrentRow.Index]["ТипОборудования"].ToString(),
+                dataTable.Rows[request_list.CurrentRow.Index]["Характеристика"].ToString(),
+                dataTable.Rows[request_list.CurrentRow.Index]["НеисправностьВЗаявке"].ToString(),
+                dataTable.Rows[request_list.CurrentRow.Index]["СтатусЗаявки"].ToString());
+            requestForm.FormClosed += RequestForm_FormClosed;
+            
             requestForm.Show();
+        }
+
+        private void RequestForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            LoadDataInDataGridView(applicationsQuery);
         }
 
         private void search_req_button_Click(object sender, EventArgs e)
         {
             //поиск по id заявки
-            //query = 
+            string query;
+            if (search_req_id_box.Text != "") query = applicationsQuery + $" Where [ИсторияСобытий].[IDОборудования] = '{Convert.ToInt32(search_req_id_box.Text)}' AND [СтатусЗаявки] LIKE '%{status_box.Text}%'";
+            else query = applicationsQuery + $" Where [СтатусЗаявки] LIKE '%{status_box.Text}%'";
+            LoadDataInDataGridView(query);
         }
 
         private void search_req_clear_Click(object sender, EventArgs e)
         {
             search_req_id_box.Text = "";
+            status_box.Text = "";
 
             search_req_button_Click(null,null);
         }
@@ -108,6 +126,15 @@ namespace pnnpk
         private void request_list_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //открытие заявки по DoubleClick
+            open_request_Click(null, null);
+        }
+
+        private void search_req_id_box_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(8))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
