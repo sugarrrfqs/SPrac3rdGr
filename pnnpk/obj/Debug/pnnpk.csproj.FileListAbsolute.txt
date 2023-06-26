@@ -179,3 +179,42 @@ C:\Users\egorp\Desktop\Практика\клиент\SPrac3rdGr\pnnpk\bin\Debug\
 C:\Users\egorp\Desktop\Практика\клиент\SPrac3rdGr\pnnpk\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\egorp\Desktop\Практика\клиент\SPrac3rdGr\pnnpk\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\egorp\Desktop\Практика\клиент\SPrac3rdGr\pnnpk\obj\Debug\pnnpk.csproj.CopyComplete
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\bin\Debug\pnnpk.exe.config
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\bin\Debug\pnnpk.exe
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\bin\Debug\pnnpk.pdb
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\bin\Debug\System.Memory.dll
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\bin\Debug\System.Text.Json.dll
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\bin\Debug\System.Buffers.dll
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\bin\Debug\System.ValueTuple.dll
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.csproj.AssemblyReference.cache
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.csproj.SuggestedBindingRedirects.cache
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.exe.config
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.AddItemForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.AuthorizationForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.BrowseItemForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.ChangeDepForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.ChangeEmpForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.ChangeGroupForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.CreateItemForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.CreateRequestForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.DepartmentListForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.EmployeeListForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.EquipmentListForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.ExtensiveHistoryForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.FinishRequestForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.ItemForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.MainForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.Properties.Resources.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.PurchaseForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.RequestForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.RequestListForm.resources
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.csproj.GenerateResource.cache
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.csproj.CoreCompileInputs.cache
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.csproj.CopyComplete
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.exe
+C:\Users\Sasha\Desktop\Школка\Практика\от егора\pnnpk\obj\Debug\pnnpk.pdb

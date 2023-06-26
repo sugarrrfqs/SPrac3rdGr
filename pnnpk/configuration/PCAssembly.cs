@@ -17,5 +17,13 @@ namespace pnnpk.configuration
         public RAM[] ListRAM { get; private set; }
         public GPU[] ListGPU { get; private set; }
         public DataStorage[] ListDS { get; private set; }
+
+        public PCAssembly(CPU[] listcpu, RAM[] listram, GPU[] listgpu, DataStorage[] listds)
+        {
+            ListCPU = listcpu;
+            ListRAM = listram;
+            ListGPU = listgpu;
+            ListDS = listds;
+        }
     }
 }
