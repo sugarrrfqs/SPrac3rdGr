@@ -39,6 +39,8 @@
             this.item_list = new System.Windows.Forms.DataGridView();
             this.add_button = new System.Windows.Forms.Button();
             this.choose_button = new System.Windows.Forms.Button();
+            this.add_from_file_button = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.item_list)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,6 +115,7 @@
             // 
             this.item_list.AllowUserToAddRows = false;
             this.item_list.AllowUserToDeleteRows = false;
+            this.item_list.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.item_list.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.item_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.item_list.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -121,16 +124,16 @@
             this.item_list.Name = "item_list";
             this.item_list.ReadOnly = true;
             this.item_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.item_list.Size = new System.Drawing.Size(553, 418);
+            this.item_list.Size = new System.Drawing.Size(597, 418);
             this.item_list.TabIndex = 43;
             this.item_list.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.item_list_CellContentDoubleClick);
             // 
             // add_button
             // 
             this.add_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.add_button.Location = new System.Drawing.Point(430, 62);
+            this.add_button.Location = new System.Drawing.Point(326, 49);
             this.add_button.Name = "add_button";
-            this.add_button.Size = new System.Drawing.Size(142, 29);
+            this.add_button.Size = new System.Drawing.Size(142, 53);
             this.add_button.TabIndex = 44;
             this.add_button.Text = "Добавить новый";
             this.add_button.UseVisualStyleBackColor = true;
@@ -139,7 +142,7 @@
             // choose_button
             // 
             this.choose_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.choose_button.Location = new System.Drawing.Point(466, 529);
+            this.choose_button.Location = new System.Drawing.Point(510, 529);
             this.choose_button.Name = "choose_button";
             this.choose_button.Size = new System.Drawing.Size(106, 29);
             this.choose_button.TabIndex = 45;
@@ -147,11 +150,23 @@
             this.choose_button.UseVisualStyleBackColor = true;
             this.choose_button.Click += new System.EventHandler(this.choose_button_Click);
             // 
+            // add_from_file_button
+            // 
+            this.add_from_file_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.add_from_file_button.Location = new System.Drawing.Point(474, 49);
+            this.add_from_file_button.Name = "add_from_file_button";
+            this.add_from_file_button.Size = new System.Drawing.Size(142, 53);
+            this.add_from_file_button.TabIndex = 46;
+            this.add_from_file_button.Text = "Добавить новый из файла";
+            this.add_from_file_button.UseVisualStyleBackColor = true;
+            this.add_from_file_button.Click += new System.EventHandler(this.add_from_file_button_Click);
+            // 
             // BrowseItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 565);
+            this.ClientSize = new System.Drawing.Size(633, 565);
+            this.Controls.Add(this.add_from_file_button);
             this.Controls.Add(this.choose_button);
             this.Controls.Add(this.add_button);
             this.Controls.Add(this.item_list);
@@ -183,5 +198,7 @@
         private System.Windows.Forms.DataGridView item_list;
         private System.Windows.Forms.Button add_button;
         private System.Windows.Forms.Button choose_button;
+        private System.Windows.Forms.Button add_from_file_button;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }

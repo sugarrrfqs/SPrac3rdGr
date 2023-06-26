@@ -33,35 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
-    </Reference>
     <Reference Include="System.Core" />
-    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Json, Version=7.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Json.7.0.3\lib\net462\System.Text.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    <Reference Include="System.Text.Json, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\ModelBuilder\AutoMLService\System.Text.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -104,14 +80,12 @@
     <Compile Include="ChangeEmpForm.Designer.cs">
       <DependentUpon>ChangeEmpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="configuration\CPU.cs" />
-    <Compile Include="configuration\DataStorage.cs" />
-    <Compile Include="configuration\GPU.cs" />
-    <Compile Include="configuration\Hardware.cs" />
-    <Compile Include="configuration\Import.cs" />
-    <Compile Include="configuration\Memory.cs" />
-    <Compile Include="configuration\PCAssembly.cs" />
-    <Compile Include="configuration\RAM.cs" />
+    <Compile Include="ChangeGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeGroupForm.Designer.cs">
+      <DependentUpon>ChangeGroupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateItemForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +115,12 @@
     </Compile>
     <Compile Include="EquipmentListForm.Designer.cs">
       <DependentUpon>EquipmentListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtensiveHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtensiveHistoryForm.Designer.cs">
+      <DependentUpon>ExtensiveHistoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="extern_variables.cs" />
     <Compile Include="FinishRequestForm.cs">
@@ -196,6 +176,9 @@
     <EmbeddedResource Include="ChangeEmpForm.resx">
       <DependentUpon>ChangeEmpForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangeGroupForm.resx">
+      <DependentUpon>ChangeGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateItemForm.resx">
       <DependentUpon>CreateItemForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EquipmentListForm.resx">
       <DependentUpon>EquipmentListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtensiveHistoryForm.resx">
+      <DependentUpon>ExtensiveHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FinishRequestForm.resx">
       <DependentUpon>FinishRequestForm.cs</DependentUpon>
@@ -238,7 +224,6 @@
     <EmbeddedResource Include="RequestListForm.resx">
       <DependentUpon>RequestListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -251,6 +236,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

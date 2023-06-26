@@ -39,7 +39,7 @@ namespace pnnpk
         private void cancel_button_Click(object sender, EventArgs e)
         {
             //отмена перемещения
-            this.Hide();
+            Close();
         }
 
         private void change_button_Click(object sender, EventArgs e)
@@ -58,8 +58,6 @@ namespace pnnpk
             dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
             dataAdapter.InsertCommand.ExecuteNonQuery();
 
-            query = $"INSERT INTO [ИсторияСобытий] VALUES('Перемещение', '{date}',{ID},{MainForm.userID})";
-
             query = "SELECT * FROM [ИсторияСобытий] ORDER BY [ID] DESC offset 0 rows fetch first 1 row only";
             dataAdapter = new SqlDataAdapter(query, MainForm.connection);
             builder = new SqlCommandBuilder(dataAdapter);
@@ -67,9 +65,18 @@ namespace pnnpk
             tempTable.Columns.Clear();
             dataAdapter.Fill(tempTable);
 
-            query = $"INSERT INTO [Перемещение] VALUES({depID},'{cab}',{Convert.ToInt32(dep_new_id.Text)},'{cap_new_num_box.Text}', '{tempTable.Rows[0][0]}')";
-            dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
-            dataAdapter.InsertCommand.ExecuteNonQuery();
+            if (depID == 0)
+            {
+                query = $"INSERT INTO [Перемещение] VALUES(NULL,'{cab}',{Convert.ToInt32(dep_new_id.Text)},'{cap_new_num_box.Text}', '{tempTable.Rows[0][0]}')";
+                dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
+                dataAdapter.InsertCommand.ExecuteNonQuery();
+            }
+            else
+            {
+                query = $"INSERT INTO [Перемещение] VALUES({depID},'{cab}',{Convert.ToInt32(dep_new_id.Text)},'{cap_new_num_box.Text}', '{tempTable.Rows[0][0]}')";
+                dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
+                dataAdapter.InsertCommand.ExecuteNonQuery();
+            }
 
             query = $"SELECT * FROM [Оборудование] WHERE [ID] = {ID}";
             dataAdapter = new SqlDataAdapter(query, MainForm.connection);
@@ -78,12 +85,22 @@ namespace pnnpk
             tempTable.Columns.Clear();
             dataAdapter.Fill(tempTable);
 
-            /*if (tempTable.Rows[0][1] == "Системный блок")
+            if (tempTable.Rows[0][1].ToString() == "Системный блок" && tempTable.Rows[0][6] != DBNull.Value)
             {
+                query = $"UPDATE [Оборудование] SET [IDОтдела] = '{Convert.ToInt32(dep_new_id.Text)}', [Кабинет] = '{cap_new_num_box.Text}' WHERE [IDГруппы] = {tempTable.Rows[0][6]}";
+                dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
+                dataAdapter.InsertCommand.ExecuteNonQuery();
+            }
 
-            }*/
+            if (tempTable.Rows[0][1].ToString() == "Монитор" || tempTable.Rows[0][1].ToString() == "Принтер")
+            {
+                query = $"UPDATE [Оборудование] SET [IDГруппы] = NULL WHERE [ID] = {ID}";
+                dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
+                dataAdapter.InsertCommand.ExecuteNonQuery();
+            }
 
-            this.Hide();
+
+            Close();
         }
 
         private void browse_dep_button_Click(object sender, EventArgs e)

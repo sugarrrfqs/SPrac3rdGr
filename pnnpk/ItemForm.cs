@@ -73,8 +73,8 @@ namespace pnnpk
         private void change_emp_button_Click(object sender, EventArgs e)
         {
             //смена пользователя
-            ChangeEmpForm changeEmpForm = new ChangeEmpForm();
-            changeEmpForm.Show();
+            //ChangeEmpForm changeEmpForm = new ChangeEmpForm();
+            //changeEmpForm.Show();
         }
 
         private void move_button_Click(object sender, EventArgs e)
@@ -95,6 +95,9 @@ namespace pnnpk
         private void request_list_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //Отображение подробностей о событии
+            ExtensiveHistoryForm extensiveHistoryForm = new ExtensiveHistoryForm(Convert.ToInt32(request_list[0, request_list.CurrentRow.Index].Value),
+                request_list[1, request_list.CurrentRow.Index].Value.ToString());
+            extensiveHistoryForm.Show();
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace pnnpk
 {
@@ -72,7 +73,6 @@ namespace pnnpk
                 dataAdapter = new SqlDataAdapter(query, MainForm.connection);
                 builder = new SqlCommandBuilder(dataAdapter);
                 dataTable.Clear();
-                dataTable.Columns.Clear();
                 dataAdapter.Fill(dataTable);
                 item_list.DataSource = dataTable;
             }
@@ -170,6 +170,25 @@ namespace pnnpk
         private void item_list_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             choose_button_Click(null, null);
+        }
+
+        private void add_from_file_button_Click(object sender, EventArgs e)
+        {
+            openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.RestoreDirectory = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var fileContent = string.Empty;
+                string filePath = openFileDialog.FileName;
+                var fileStream = openFileDialog.OpenFile();
+
+                using (StreamReader reader = new StreamReader(fileStream))
+                {
+                    fileContent = reader.ReadToEnd();
+                }
+            }
         }
     }
 }

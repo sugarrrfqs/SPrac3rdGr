@@ -73,7 +73,6 @@ namespace pnnpk
                 dataAdapter = new SqlDataAdapter(query, MainForm.connection);
                 builder = new SqlCommandBuilder(dataAdapter);
                 dataTable.Clear();
-                dataTable.Columns.Clear();
                 dataAdapter.Fill(dataTable);
                 purchase_list.DataSource = dataTable;
             }

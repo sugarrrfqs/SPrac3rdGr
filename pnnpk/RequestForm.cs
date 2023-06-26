@@ -67,27 +67,29 @@ namespace pnnpk
 
             if (result == DialogResult.Yes)
             {
-                EquipmentListForm equipmentReplacementForm = new EquipmentListForm(itemID);
+                EquipmentListForm equipmentReplacementForm = new EquipmentListForm(itemID, type);
                 equipmentReplacementForm.FormClosed += EquipmentReplacementForm_FormClosed;
                 equipmentReplacementForm.Show();
             }
+            else
+            {
+                //просто принимаем заявку
+                EquipmentReplacementForm_FormClosed(null, null);
+            }
+        }
 
-            //просто принимаем заявку
+        private void EquipmentReplacementForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
             string date = DateTime.UtcNow.ToString("yyyy-MM-dd");
             string query = $"UPDATE [Ремонт] SET [СтатусЗаявки] = 'В работе', [ДатаПринятияЗаявки] = '{date}' " +
                            $"WHERE [ID] = {reqID}";
             dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
             dataAdapter.InsertCommand.ExecuteNonQuery();
 
-            query = $"UPDATE [Оборудование] SET [Статус] = 'В ремонте'" +
+            query = $"UPDATE [Оборудование] SET [Статус] = 'В ремонте', [IDГруппы] = NULL " +
                     $"WHERE [ID] = {itemID}";
             dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
             dataAdapter.InsertCommand.ExecuteNonQuery();
-            Close();
-        }
-
-        private void EquipmentReplacementForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
             Close();
         }
 

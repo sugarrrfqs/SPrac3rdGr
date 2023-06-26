@@ -115,8 +115,7 @@ namespace pnnpk
             {
                 dataAdapter = new SqlDataAdapter(query, connection);
                 builder = new SqlCommandBuilder(dataAdapter);
-                dataTable.Clear();
-                //dataTable.Columns.Clear();               
+                dataTable.Clear();             
                 dataAdapter.Fill(dataTable);
                 equipment_list.DataSource = dataTable;
             }
@@ -296,6 +295,7 @@ namespace pnnpk
         private void request_list_button_Click(object sender, EventArgs e)
         {
             RequestListForm requestListForm = new RequestListForm();
+            requestListForm.FormClosed += FormClosedUpdate;
             requestListForm.Show();
         }
 
@@ -312,12 +312,11 @@ namespace pnnpk
         private void buy_button_Click(object sender, EventArgs e)
         {
             PurchaseForm purchaseForm = new PurchaseForm();
-            purchaseForm.Show();
-
-            purchaseForm.FormClosed += PurchaseForm_FormClosed;
+            purchaseForm.FormClosed += FormClosedUpdate;
+            purchaseForm.Show();      
         }
 
-        private void PurchaseForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void FormClosedUpdate(object sender, FormClosedEventArgs e)
         {
             LoadDataInDataGridView(equipmentQuery);
         }
@@ -337,24 +336,66 @@ namespace pnnpk
         private void request_button_Click(object sender, EventArgs e)
         {
             //создание заявки на ремонт
-            CreateRequestForm createRequestForm = new CreateRequestForm(Convert.ToInt32(equipment_list[0, equipment_list.CurrentRow.Index].Value));
-            createRequestForm.Show();
+            if (equipment_list[2, equipment_list.CurrentRow.Index].Value.ToString() != "В ремонте" 
+                && equipment_list[2, equipment_list.CurrentRow.Index].Value.ToString() != "В заявке"
+                && equipment_list[2, equipment_list.CurrentRow.Index].Value.ToString() != "Списан")
+            {
+                CreateRequestForm createRequestForm = new CreateRequestForm(Convert.ToInt32(equipment_list[0, equipment_list.CurrentRow.Index].Value));
+                createRequestForm.FormClosed += FormClosedUpdate;
+                createRequestForm.Show();
+            }
         }
 
         private void change_emp_button_Click(object sender, EventArgs e)
         {
             //смена пользователя
-            ChangeEmpForm changeEmpForm = new ChangeEmpForm();
+            int emp;
+            string name;
+
+            if (equipment_list[3, equipment_list.CurrentRow.Index].Value == DBNull.Value)
+            {
+                emp = 0;
+            }
+            else emp = Convert.ToInt32(equipment_list[3, equipment_list.CurrentRow.Index].Value);
+
+            if (equipment_list[4, equipment_list.CurrentRow.Index].Value == DBNull.Value)
+            {
+                name = "";
+            }
+            else name = equipment_list[4, equipment_list.CurrentRow.Index].Value.ToString();
+
+            ChangeEmpForm changeEmpForm = new ChangeEmpForm(emp, name, Convert.ToInt32(equipment_list[0, equipment_list.CurrentRow.Index].Value));
+            changeEmpForm.FormClosed += FormClosedUpdate;
             changeEmpForm.Show();
         }
 
         private void move_button_Click(object sender, EventArgs e)
         {
             //перемещение оборудования
-            ChangeDepForm changeDepForm = new ChangeDepForm(Convert.ToInt32(equipment_list[5, equipment_list.CurrentRow.Index].Value),
-                equipment_list[6, equipment_list.CurrentRow.Index].Value.ToString(),
-                equipment_list[7, equipment_list.CurrentRow.Index].Value.ToString(),
-                Convert.ToInt32(equipment_list[0, equipment_list.CurrentRow.Index].Value));
+            int dep;
+            string name;
+            string cab;
+            if (equipment_list[5, equipment_list.CurrentRow.Index].Value == DBNull.Value)
+            {
+                dep = 0;
+            }
+            else dep = Convert.ToInt32(equipment_list[5, equipment_list.CurrentRow.Index].Value);
+
+            if (equipment_list[6, equipment_list.CurrentRow.Index].Value == DBNull.Value)
+            {
+                name = "";
+            }
+            else name = equipment_list[6, equipment_list.CurrentRow.Index].Value.ToString();
+
+            if (equipment_list[7, equipment_list.CurrentRow.Index].Value == DBNull.Value)
+            {
+                cab = "";
+            }
+            else cab = equipment_list[7, equipment_list.CurrentRow.Index].Value.ToString();
+
+            ChangeDepForm changeDepForm = new ChangeDepForm(dep, name, cab,
+            Convert.ToInt32(equipment_list[0, equipment_list.CurrentRow.Index].Value));
+            changeDepForm.FormClosed += FormClosedUpdate;
             changeDepForm.Show();
         }
 
@@ -369,6 +410,14 @@ namespace pnnpk
             {
                 e.Handled = true;
             }
+        }
+
+        private void change_group_button_Click(object sender, EventArgs e)
+        {
+            //Смена группы
+            ChangeGroupForm changeGroupForm = new ChangeGroupForm(Convert.ToInt32(equipment_list[0, equipment_list.CurrentRow.Index].Value));
+            changeGroupForm.FormClosed += FormClosedUpdate;
+            changeGroupForm.Show();
         }
     }
 }

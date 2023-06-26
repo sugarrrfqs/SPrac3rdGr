@@ -36,11 +36,23 @@ namespace pnnpk
             //отправить заявку
 
             string date = DateTime.UtcNow.ToString("yyyy-MM-dd");
-            string query = $"INSERT INTO [ИсторияСобытий] VALUES ('ЗаявкаНаРемонт', '{date}', {itemID}, {MainForm.userID})";
+            string query = $"INSERT INTO [ИсторияСобытий] VALUES ('Ремонт', '{date}', {itemID}, {MainForm.userID})";
             dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
             dataAdapter.InsertCommand.ExecuteNonQuery();
 
-            query = $"UPDATE [Оборудование] SET [Статус] = 'В заявке' " +
+            DataTable tempTable = new DataTable();
+            query = "SELECT * FROM [ИсторияСобытий] ORDER BY [ID] DESC offset 0 rows fetch first 1 row only";
+            dataAdapter = new SqlDataAdapter(query, MainForm.connection);
+            builder = new SqlCommandBuilder(dataAdapter);
+            tempTable.Clear();
+            tempTable.Columns.Clear();
+            dataAdapter.Fill(tempTable);
+
+            query = $"INSERT INTO [Ремонт] VALUES ('{date}', NULL, NULL, 'Ждет принятия', '{problem_box.Text}', '', '{tempTable.Rows[0][0]}', {MainForm.userID})";
+            dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
+            dataAdapter.InsertCommand.ExecuteNonQuery();
+
+            query = $"UPDATE [Оборудование] SET [Статус] = 'В заявке', [IDГруппы] = NULL " +
                 $"WHERE [ID] = {itemID}";
             dataAdapter.InsertCommand = new SqlCommand(query, MainForm.connection);
             dataAdapter.InsertCommand.ExecuteNonQuery();

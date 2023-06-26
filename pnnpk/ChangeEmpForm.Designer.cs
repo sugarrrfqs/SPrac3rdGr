@@ -168,9 +168,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label emp_id_label;
         private System.Windows.Forms.Label emp_name_label;
-        private System.Windows.Forms.Label emp_new_name_label;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox emp_new_id_box;
         private System.Windows.Forms.Button browse_emp_button;
+        public System.Windows.Forms.Label emp_new_name_label;
+        public System.Windows.Forms.TextBox emp_new_id_box;
     }
 }

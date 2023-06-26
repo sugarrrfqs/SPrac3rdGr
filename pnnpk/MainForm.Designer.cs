@@ -76,6 +76,7 @@
             this.request_list_button = new System.Windows.Forms.Button();
             this.purchaser_groupbox = new System.Windows.Forms.GroupBox();
             this.buy_button = new System.Windows.Forms.Button();
+            this.change_group_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.equipment_list)).BeginInit();
             this.search_groupbox.SuspendLayout();
             this.storekeeper_groupbox.SuspendLayout();
@@ -485,12 +486,13 @@
             // 
             // storekeeper_groupbox
             // 
+            this.storekeeper_groupbox.Controls.Add(this.change_group_button);
             this.storekeeper_groupbox.Controls.Add(this.change_emp_button);
             this.storekeeper_groupbox.Controls.Add(this.request_button);
             this.storekeeper_groupbox.Controls.Add(this.move_button);
             this.storekeeper_groupbox.Location = new System.Drawing.Point(12, 456);
             this.storekeeper_groupbox.Name = "storekeeper_groupbox";
-            this.storekeeper_groupbox.Size = new System.Drawing.Size(320, 110);
+            this.storekeeper_groupbox.Size = new System.Drawing.Size(320, 136);
             this.storekeeper_groupbox.TabIndex = 45;
             this.storekeeper_groupbox.TabStop = false;
             this.storekeeper_groupbox.Text = "Кладовщик";
@@ -530,7 +532,7 @@
             // 
             this.engineer_groupbox.Controls.Add(this.write_off_button);
             this.engineer_groupbox.Controls.Add(this.request_list_button);
-            this.engineer_groupbox.Location = new System.Drawing.Point(12, 572);
+            this.engineer_groupbox.Location = new System.Drawing.Point(15, 598);
             this.engineer_groupbox.Name = "engineer_groupbox";
             this.engineer_groupbox.Size = new System.Drawing.Size(320, 81);
             this.engineer_groupbox.TabIndex = 46;
@@ -575,9 +577,19 @@
             this.buy_button.Name = "buy_button";
             this.buy_button.Size = new System.Drawing.Size(198, 23);
             this.buy_button.TabIndex = 0;
-            this.buy_button.Text = "Закупить оборудование";
+            this.buy_button.Text = "Добавить оборудование";
             this.buy_button.UseVisualStyleBackColor = true;
             this.buy_button.Click += new System.EventHandler(this.buy_button_Click);
+            // 
+            // change_group_button
+            // 
+            this.change_group_button.Location = new System.Drawing.Point(3, 106);
+            this.change_group_button.Name = "change_group_button";
+            this.change_group_button.Size = new System.Drawing.Size(198, 23);
+            this.change_group_button.TabIndex = 3;
+            this.change_group_button.Text = "Изменить номер группы";
+            this.change_group_button.UseVisualStyleBackColor = true;
+            this.change_group_button.Click += new System.EventHandler(this.change_group_button_Click);
             // 
             // MainForm
             // 
@@ -653,6 +665,7 @@
         private System.Windows.Forms.Button request_button;
         private System.Windows.Forms.Button move_button;
         private System.Windows.Forms.Button open_item_button;
+        private System.Windows.Forms.Button change_group_button;
     }
 }
 
