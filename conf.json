@@ -1,0 +1,37 @@
+{
+  "ListCPU": [
+    {
+      "Name": "Intel(R) Core(TM) i5-10500H CPU @ 2.50GHz",
+      "Manufacturer": "GenuineIntel"
+    }
+  ],
+  "ListRAM": [
+    {
+      "Capacity": "8192 GB",
+      "Name": "\u0424\u0438\u0437\u0438\u0447\u0435\u0441\u043A\u0430\u044F \u043F\u0430\u043C\u044F\u0442\u044C",
+      "Manufacturer": "Samsung"
+    },
+    {
+      "Capacity": "8192 GB",
+      "Name": "\u0424\u0438\u0437\u0438\u0447\u0435\u0441\u043A\u0430\u044F \u043F\u0430\u043C\u044F\u0442\u044C",
+      "Manufacturer": "Samsung"
+    }
+  ],
+  "ListGPU": [
+    {
+      "Name": "Intel(R) UHD Graphics",
+      "Manufacturer": "Intel Corporation"
+    },
+    {
+      "Name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "Manufacturer": "NVIDIA"
+    }
+  ],
+  "ListDS": [
+    {
+      "Capacity": "488382 GB",
+      "Name": "Micron_2210_MTFDHBA512QFD",
+      "Manufacturer": "Micron_2210_MTFDHBA512QFD"
+    }
+  ]
+}
